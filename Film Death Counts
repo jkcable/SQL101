@@ -1,0 +1,18 @@
+Which Quentin Tarantino movie has the most body counts?
+  SELECT director, body_count, film FROM movies
+  WHERE director = "Quentin Tarantino"
+  ORDER BY (body_count) DESC;
+  Kill Bill Vol. 1 - 95 Body Count
+Which movie director has the least violent movies?
+  James Gray - 2 Body Count
+  SELECT director, sum(body_count) FROM movies
+  GROUP BY director
+  ORDER BY sum(body_count) ASC;
+What are the three most violent years in film?
+  2007, 2004, 2003
+  SELECT film, year, sum(body_count) FROM movies
+  GROUP BY year
+  ORDER BY sum(body_count) DESC;
+"Have movies gotten more violent over the past 30+ years?" Prove it.
+
+Are R-rated movies more violent compared to films rated G, PG, PG-13? Prove it.
