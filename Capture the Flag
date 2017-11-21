@@ -1,1 +1,44 @@
 
+These are the "flags" to complete in order to graduate from the SQL 101 course. Complete the following:
+
+- Find solutions to the questions below
+- Push your solutions and the SQL queries you used to get them to a github repository that you've created
+- When you're done, send Jay a link to the repository for review
+
+### Flags (Show us your queries)
+1. Which Quentin Tarantino movie has the most body counts?
+1. Who are the top 5 movie directors by total body count?
+1. What are the top three most violent movies?
+1. Which movie director has the least violent movies?
+1. What are the three most violent years in film?
+1. Have movies gotten more violent over the past 30+ years? Prove it.
+1. Are R-rated movies more violent compared to films rated G, PG, PG-13? Prove it.
+1. How many R-rated movies with a IMDB Rating greater than 6.5 are in our dataset? 
+
+
+1. How many Jeopardy questions have been asked about cheese?
+1. How many Jeopardy questions have been asked about the years 1800 - 1965 (use their category titles)? 
+1. According to Jeopardy which category of questions have more value - those relating to Ohio or Michigan? 
+1. How many times has the same answer been used on Jeopardy?
+1. In what months have questions with the answer 'Dr. Seuss' or 'The Bible' been asked? 
+
+1. Name the top 5 twitter users with the most tweets about #talkpay?
+1. What is the highest salary mentioned in a #talkpay tweet? (best guess)
+1. How many talkpay tweeters tweeted from San Francisco? ;)
+
+1. How many organizations have an ownership stake in a Trump related business?
+1. What is the sum total of companies that have loaned money or own collateralized debt in a Trump affiliated company?
+1. How many organizations in our dataset are named after Trump?
+
+1. What is the average FY16 expenditure for rural schools?
+1. What are the top 5 urban school districts by FY16 expenditure?
+1. Which school district has spent the most in FY16?
+
+1. What is the sum total of Marvel characters with white or blond hair?
+1. How many Marvel characters do not have a secret identity?
+1. How many female characters are from Earth-616?
+1. List the top character by number of appearances created between 1980-2005
+1. How many bad characters have more appearances than Bullseye but less than Wilson Fisk?
+
+### Extra Credit
+Present a few interesting "facts" from one of the datasets you've worked with.
