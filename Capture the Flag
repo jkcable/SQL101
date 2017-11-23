@@ -6,14 +6,54 @@ These are the "flags" to complete in order to graduate from the SQL 101 course. 
 - When you're done, send Jay a link to the repository for review
 
 ### Flags (Show us your queries)
+
 1. Which Quentin Tarantino movie has the most body counts?
-1. Who are the top 5 movie directors by total body count?
-1. What are the top three most violent movies?
-1. Which movie director has the least violent movies?
-1. What are the three most violent years in film?
-1. Have movies gotten more violent over the past 30+ years? Prove it.
-1. Are R-rated movies more violent compared to films rated G, PG, PG-13? Prove it.
-1. How many R-rated movies with a IMDB Rating greater than 6.5 are in our dataset? 
+  SELECT director, body_count, film FROM movies
+  WHERE director = "Quentin Tarantino"
+  ORDER BY (body_count) DESC;
+  Kill Bill Vol. 1 - 95 Body Count
+  
+2. Who are the top 5 movie directors by total body count?
+
+3. What are the top three most violent movies?
+
+4. Which movie director has the least violent movies?
+  James Gray - 2 Body Count
+  SELECT director, sum(body_count) FROM movies
+  GROUP BY director
+  ORDER BY sum(body_count) ASC;
+  
+5. What are the three most violent years in film?
+  2007, 2004, 2003
+  SELECT film, year, sum(body_count) FROM movies
+  GROUP BY year
+  ORDER BY sum(body_count) DESC;
+
+6. Have movies gotten more violent over the past 30+ years? Prove it.
+  SELECT SUM(Body_Count)
+  FROM movies;
+  Total Body_Count = 39,303
+  
+  SELECT SUM(Body_Count)
+  FROM movies
+  WHERE Year >= 1987;
+  Body Count Last 30 Years = 30,157
+  
+  SELECT SUM(Body_Count)
+  FROM movies
+  WHERE Year < 1987;
+  Body Count Before 1987 = 9,146
+
+7. Are R-rated movies more violent compared to films rated G, PG, PG-13? Prove it.
+  SELECT avg(Body_Count), MPAA_Rating
+  FROM movies
+  WHERE MPAA_Rating = "R";
+  Avg Body Count for "R" = 69.6
+  Avg Body Count for "G" = 88.3
+  Avg Body Count for "PG" = 73.2
+  Avg Body Count for "PG-13" = 70.9
+
+8. How many R-rated movies with a IMDB Rating greater than 6.5 are in our dataset? 
 
 
 1. How many Jeopardy questions have been asked about cheese?
