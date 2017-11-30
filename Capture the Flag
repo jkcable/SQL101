@@ -8,14 +8,26 @@ These are the "flags" to complete in order to graduate from the SQL 101 course. 
 ### Flags (Show us your queries)
 
 1. Which Quentin Tarantino movie has the most body counts?
+  Kill Bill Vol. 1 - 95 Body Count
   SELECT director, body_count, film FROM movies
   WHERE director = "Quentin Tarantino"
   ORDER BY (body_count) DESC;
-  Kill Bill Vol. 1 - 95 Body Count
   
 2. Who are the top 5 movie directors by total body count?
+  Peter Jackson - 836
+  Ridley Scott - 610
+  Zack Snyder - 600
+  Je-Kyu Kang - 590
+  Wolfgang Peterson - 572
+  SELECT director, body_count FROM movies
+  ORDER BY body_count DESC;
 
 3. What are the top three most violent movies?
+  Lord of the Rings - Return of the King - 836
+  Kingdom of Heaven - 610
+  300-600
+  SELECT film, body_count FROM movies
+  ORDER BY body_count DESC;
 
 4. Which movie director has the least violent movies?
   James Gray - 2 Body Count
@@ -54,6 +66,10 @@ These are the "flags" to complete in order to graduate from the SQL 101 course. 
   Avg Body Count for "PG-13" = 70.9
 
 8. How many R-rated movies with a IMDB Rating greater than 6.5 are in our dataset? 
+  207
+  SELECT mpaa_rating, IMBD_Rating FROM movies
+  WHERE IMBD_Rating > 6.5
+  AND mpaa_rating = "R";
 
 
 1. How many Jeopardy questions have been asked about cheese?
