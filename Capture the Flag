@@ -73,10 +73,36 @@ These are the "flags" to complete in order to graduate from the SQL 101 course. 
 
 
 1. How many Jeopardy questions have been asked about cheese?
-1. How many Jeopardy questions have been asked about the years 1800 - 1965 (use their category titles)? 
-1. According to Jeopardy which category of questions have more value - those relating to Ohio or Michigan? 
-1. How many times has the same answer been used on Jeopardy?
-1. In what months have questions with the answer 'Dr. Seuss' or 'The Bible' been asked? 
+  456
+  SELECT question FROM jeopardy
+  WHERE question LIKE "%cheese%";
+
+2. How many Jeopardy questions have been asked about the years 1800 - 1965 (use their category titles)? 
+  412
+  SELECT category, count(question) FROM jeopardy
+  WHERE category BETWEEN 1800 AND 1965;
+
+3. According to Jeopardy which category of questions have more value - those relating to Ohio or Michigan? 
+
+
+4. How many times has the same answer been used on Jeopardy?
+  China is the most with 216 times.
+  SELECT answer, COUNT(*)
+  FROM jeopardy
+  GROUP BY answer
+  HAVING COUNT(*) > 1
+  ORDER BY COUNT(answer) DESC;
+
+5. In what months have questions with the answer 'Dr. Seuss' or 'The Bible' been asked? 
+  Dr. Seuss - Jan, Feb, Mar, Apr, May, June, Sept, Oct, Nov, Dec
+  SELECT strftime("%m",air_date), answer FROM jeopardy
+  WHERE answer = "Dr. Seuss"
+  GROUP BY strftime("%m",air_date);
+  The Bible - May, July, Oct, Nov, Dec
+  SELECT strftime("%m",air_date), answer FROM jeopardy
+  WHERE answer = "The Bible"
+  GROUP BY strftime("%m",air_date);
+  
 
 1. Name the top 5 twitter users with the most tweets about #talkpay?
 1. What is the highest salary mentioned in a #talkpay tweet? (best guess)
