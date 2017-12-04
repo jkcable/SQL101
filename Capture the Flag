@@ -105,12 +105,45 @@ These are the "flags" to complete in order to graduate from the SQL 101 course. 
   
 
 1. Name the top 5 twitter users with the most tweets about #talkpay?
+  Pristine Indigo - 123
+  Forrest L Norvell - 106
+  NN EDM INC - 82
+  Stephanie Morillo - 81
+  EmothionalLaborParty - 59
+  SELECT user_name, text, count(*) FROM talkpay
+  GROUP BY user_name
+  HAVING count(*) > 1
+  ORDER BY COUNT(*) DESC;
+
 1. What is the highest salary mentioned in a #talkpay tweet? (best guess)
+
 1. How many talkpay tweeters tweeted from San Francisco? ;)
+  198
+  SELECT user_location FROM talkpay
+  WHERE user_location = "San Francisco";
+
 
 1. How many organizations have an ownership stake in a Trump related business?
+  317
+  SELECT connection FROM trumpworld_public
+  WHERE connection = "Ownership";
+
 1. What is the sum total of companies that have loaned money or own collateralized debt in a Trump affiliated company?
+  54 - collateralized debt
+  SELECT count(connection) FROM trumpworld_public
+  WHERE connection = "Owns collateralized debt";
+  12 - collateralized debt
+  SELECT count(connection) FROM trumpworld_public
+  WHERE connection = "Loaned money";
+  66 totoal companies have loaned money or own collateralized debt
+  
 1. How many organizations in our dataset are named after Trump?
+  Organization A - 180 named after Trump
+  SELECT OrganizationA FROM trumpworld_public
+  WHERE OrganizationA LIKE ("%TRUMP%");
+  Organization B - 238 named after Trump
+  SELECT OrganizationB FROM trumpworld_public
+  WHERE OrganizationB LIKE ("%TRUMP%");
 
 1. What is the average FY16 expenditure for rural schools?
 1. What are the top 5 urban school districts by FY16 expenditure?
