@@ -156,3 +156,19 @@ Maria Hill (Earth-616) - 325 appearances - 2005
   ORDER BY year DESC;
 
 23. How many bad characters have more appearances than Bullseye but less than Wilson Fisk?
+Bullseye = 277 appearances
+  SELECT appearance FROM marvel_wikia_data
+  WHERE name LIKE ("%Bullseye%");
+Wilson Fisk = 503 appearances
+  SELECT appearance FROM marvel_wikia_data
+  WHERE name LIKE ("%Wilson Fisk%");
+Sabertooth
+Johann Shmidt
+Raven Darkholme
+Felicia Hardy
+MacDonald Gargan
+Mephisto
+Thanos
+  SELECT name, align, appearance FROM marvel_wikia_data
+  WHERE align LIKE ("%bad%") AND appearance BETWEEN 278 AND 502;
+
