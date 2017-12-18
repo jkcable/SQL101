@@ -137,11 +137,24 @@
     WHERE OrganizationB LIKE ("%TRUMP%");
     
 19. What is the sum total of Marvel characters with white or blond hair?
+2336
+  SELECT count(hair) FROM marvel_wikia_data
+  WHERE hair LIKE ("White Hair") OR hair LIKE ("Blond Hair");
 
 20. How many Marvel characters do not have a secret identity?
+10102
+  SELECT count(ID) FROM marvel_wikia_data
+  WHERE ID NOT LIKE ("Secret Identity");
 
 21. How many female characters are from Earth-616?
+3825
+  SELECT count(name) FROM marvel_wikia_data
+  WHERE name LIKE ("%Earth-616%") AND sex LIKE ("%female%");
 
 22. List the top character by number of appearances created between 1980-2005
+Maria Hill (Earth-616) - 325 appearances - 2005
+  SELECT name, appearance, year FROM marvel_wikia_data
+  WHERE year BETWEEN 1980 AND 2005
+  ORDER BY year DESC;
 
 23. How many bad characters have more appearances than Bullseye but less than Wilson Fisk?
