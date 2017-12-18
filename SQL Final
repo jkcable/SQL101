@@ -78,8 +78,6 @@
     WHERE category LIKE "ohio" OR category LIKE "michigan"
     GROUP BY category;
 
-
-
 12. How many times has the same answer been used on Jeopardy?
   China is the most with 216 times.
     SELECT answer, COUNT(*)
